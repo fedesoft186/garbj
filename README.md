@@ -1,2 +1,2 @@
-# garbj
-App Garbj
+# garbj - Recicla tus puntos
+Juan P³
