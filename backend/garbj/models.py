@@ -11,3 +11,9 @@ class Usuario(models.Model):
     correo = models.CharField(max_length=200)
     fecha_nacimiento = models.DateField(max_length=200)
 
+class Premio(models.Model):
+    descripcion = models.TextField()
+    nombre = models.CharField(max_length=200)
+    valor = models.IntegerField()
+    def __str__(self):
+        return str(self.nombre)   

@@ -7,8 +7,9 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class RestProvider {
-  apiUrl = 'http://localhost:8000/';
+  apiUrl = 'http://71e39e6a.ngrok.io/';
   loginService = 'api/login/';
+  apiPremio = 'premio';
 
 
   constructor(public http: HttpClient) {
@@ -23,6 +24,18 @@ export class RestProvider {
         }, (err) => {
           reject(err);
         });
+    });
+  }
+
+  getPremio() {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl + this.apiPremio, {
+        headers: new HttpHeaders().set('Authorization', 'token ' + window.localStorage['token'])
+      }).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      }); 
     });
   }
 }

@@ -1,4 +1,5 @@
 from garbj.models import Usuario
+from garbj.models import Premio
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
@@ -21,3 +22,9 @@ class UsuarioSerializer(serializers.ModelSerializer):
             Usuario.objects.update_or_create(user=user,**validated_data)
             usuario = Usuario.objects.get(user=user)
             return usuario
+
+class PremioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Premio
+        fields = ('nombre','descripcion','valor')
+          

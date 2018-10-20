@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
+import { HomePage } from '../home/home';
+import { PremioPage } from '../premio/premio';
 
 /**
  * Generated class for the LoginPage page.
@@ -21,7 +23,9 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    if(window.localStorage['token']) {
+      this.navCtrl.push(PremioPage);
+    }
   }
   iniciarSesion() {
     /* Llamado al api de forma genérica:  localhost:8000/api/login/
@@ -29,10 +33,11 @@ export class LoginPage {
     console.log(this.clave);
     */
     var data = { 'username': this.usuario, 'password': this.clave };
-    this.restProvider.login(data)
-      .then(data => {
-        console.log(data);
-      });
+    this.restProvider.login(data).then((result:any) => {
+      window.localStorage['token'] = result.key;
+      this.navCtrl.push(PremioPage);    //Resgistrar las páginas IONIC
+    }, (err) => {
+            console.log(err);
+        });
   }
-
 }

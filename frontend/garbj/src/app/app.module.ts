@@ -9,12 +9,14 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { HttpClient, HttpClientModule } from '@angular/common/http';  //Se incluye de la guía IONIC
 import { RestProvider } from '../providers/rest/rest';
+import { PremioPage } from '../pages/premio/premio';    //Añadido por Login tutorial IONIC
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    PremioPage  //Resgistrar las páginas IONIC
   ],
 
   imports: [
@@ -27,7 +29,8 @@ import { RestProvider } from '../providers/rest/rest';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    PremioPage    //Resgistrar las páginas IONIC
   ],
   providers: [
     StatusBar,

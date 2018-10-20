@@ -25,7 +25,7 @@ SECRET_KEY = 'v&vq&m6@2@-evl@c9vo%)&fkmzvx9w8oi%miz3%pa6jw)oj-a+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -57,14 +57,17 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
- 'localhost:8000',
+    'localhost:8080',
+    'localhost:8000',
+    'localhost:8100',
+    'localhost:8200',
 )
 CORS_ALLOW_METHODS = (
- 'DELETE',
- 'GET',
- 'PATCH',
- 'POST',
- 'PUT',
+    'DELETE',
+    'GET',
+    'PATCH',
+    'POST',
+    'PUT',
 )
 
 ROOT_URLCONF = 'backend.urls'
