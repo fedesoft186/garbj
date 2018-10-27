@@ -24,7 +24,7 @@ export class LoginPage {
 
   ionViewDidLoad() {
     if(window.localStorage['token']) {
-      this.navCtrl.push(PremioPage);
+      this.navCtrl.push(HomePage);
     }
   }
   iniciarSesion() {
@@ -35,7 +35,7 @@ export class LoginPage {
     var data = { 'username': this.usuario, 'password': this.clave };
     this.restProvider.login(data).then((result:any) => {
       window.localStorage['token'] = result.key;
-      this.navCtrl.push(PremioPage);    //Resgistrar las páginas IONIC
+      this.navCtrl.push(HomePage);    //Resgistrar las páginas IONIC
     }, (err) => {
             console.log(err);
         });
