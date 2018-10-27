@@ -10,9 +10,9 @@ export class RestProvider {
   apiUrl = 'http://localhost:8000/';
   apiUsuarioActual = 'api/user/';
   apiUsuarios = 'usuarios/';
+  //apiUrl = 'http://33215653.ngrok.io/';
   loginService = 'api/login/';
   apiPremio = 'premio';
-
 
   constructor(public http: HttpClient) {
     console.log('Hello RestProvider Provider');
@@ -21,6 +21,17 @@ export class RestProvider {
   login(data) {
     return new Promise((resolve, reject) => {
       this.http.post(this.apiUrl + this.loginService, data)
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  registro(data) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl + this.apiUsuarios, data)
         .subscribe(res => {
           resolve(res);
         }, (err) => {
