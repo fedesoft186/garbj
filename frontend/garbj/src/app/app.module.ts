@@ -10,13 +10,16 @@ import { LoginPage } from '../pages/login/login';
 import { HttpClient, HttpClientModule } from '@angular/common/http';  //Se incluye de la guía IONIC
 import { RestProvider } from '../providers/rest/rest';
 import { PremioPage } from '../pages/premio/premio';    //Añadido por Login tutorial IONIC
+import { RegistroPage } from '../pages/registro/registro';  //Añadido por Registro tutorial Registro Usuarios
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    PremioPage  //Resgistrar las páginas IONIC
+    PremioPage,  //Resgistrar las páginas IONIC
+    RegistroPage  //Resgistrar la página "Registro"
   ],
 
   imports: [
@@ -30,7 +33,8 @@ import { PremioPage } from '../pages/premio/premio';    //Añadido por Login tut
     MyApp,
     HomePage,
     LoginPage,
-    PremioPage    //Resgistrar las páginas IONIC
+    PremioPage,    //Resgistrar las páginas IONIC
+    RegistroPage
   ],
   providers: [
     StatusBar,

@@ -10,7 +10,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
     apellido = serializers.CharField(required=False)
     correo = serializers.CharField(required=False)
     fecha_nacimiento = serializers.DateField(required=False)
-    
+
     class Meta:
         model = User
         fields = ('id', 'username', 'password', 'nombre', 'apellido','correo', 'fecha_nacimiento')

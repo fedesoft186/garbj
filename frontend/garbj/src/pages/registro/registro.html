@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <!--
+      username = serializers.CharField(write_only=True,source="user.username")
+      password = serializers.CharField(write_only=True,source="user.password")
+      nombre = serializers.CharField(required=False)
+      apellido = serializers.CharField(required=False)
+      correo = serializers.CharField(required=False)
+      fecha_nacimiento = serializers.DateField(required=False)
+    -->
+
+    <ion-item>
+      <ion-label floating>Apodo</ion-label>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Apellido</ion-label>
+      <ion-input type="text" [(ngModel)]="apellido"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Correo</ion-label>
+      <ion-input type="email" [(ngModel)]="correo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Fecha de nacimiento</ion-label>
+      <ion-input type="date" [(ngModel)]="fecha_nacimiento"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Perfil</ion-label>
+      <ion-textarea [(ngModel)]="perfil"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button block outline (click)="iniciarRegistro()">Empezar a Reciclar</button>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

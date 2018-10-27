@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 import { HomePage } from '../home/home';
 import { PremioPage } from '../premio/premio';
+import { RegistroPage } from '../registro/registro';
 
 /**
  * Generated class for the LoginPage page.
@@ -23,7 +24,7 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    if(window.localStorage['token']) {
+    if (window.localStorage['token']) {
       this.navCtrl.push(HomePage);
     }
   }
@@ -33,11 +34,14 @@ export class LoginPage {
     console.log(this.clave);
     */
     var data = { 'username': this.usuario, 'password': this.clave };
-    this.restProvider.login(data).then((result:any) => {
+    this.restProvider.login(data).then((result: any) => {
       window.localStorage['token'] = result.key;
       this.navCtrl.push(HomePage);    //Resgistrar las páginas IONIC
     }, (err) => {
-            console.log(err);
-        });
+      console.log(err);
+    });
+  }
+  mostrarRegistro() {   //Añadido método para registro
+    this.navCtrl.push(RegistroPage);
   }
 }
