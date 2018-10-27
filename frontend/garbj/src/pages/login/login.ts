@@ -4,6 +4,7 @@ import { RestProvider } from '../../providers/rest/rest';
 import { HomePage } from '../home/home';
 import { PremioPage } from '../premio/premio';
 import { RegistroPage } from '../registro/registro';
+import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the LoginPage page.
@@ -20,7 +21,7 @@ import { RegistroPage } from '../registro/registro';
 export class LoginPage {
   usuario: String;
   clave: String;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider, public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -40,6 +41,12 @@ export class LoginPage {
     }, (err) => {
       console.log(err);
     });
+
+    const toast = this.toastCtrl.create({
+      message: 'Usuario: ' + this.usuario + 'Clave: ' + this.clave,
+      duration: 3000
+    });
+    toast.present();
   }
   mostrarRegistro() {   //Añadido método para registro
     this.navCtrl.push(RegistroPage);
