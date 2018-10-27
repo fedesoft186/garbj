@@ -9,7 +9,9 @@ class Usuario(models.Model):
     nombre = models.CharField(max_length=200)
     apellido = models.CharField(max_length=200)
     correo = models.CharField(max_length=200)
-    fecha_nacimiento = models.DateField(max_length=200)
+    fecha_nacimiento = models.DateField(max_length=200) 
+    def __str__(self):
+        return str(self.nombre)   
 
 class Premio(models.Model):
     descripcion = models.TextField()

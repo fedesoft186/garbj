@@ -41,9 +41,9 @@ export class RegistroPage {
     var data = {
       'username': this.username,
       'password': this.clave,
-      'first_name': this.nombre,
-      'last_name': this.apellido,
-      'email': this.correo,
+      'nombre': this.nombre,
+      'apellido': this.apellido,
+      'correo': this.correo,
       'fecha_nacimiento': this.fecha_nacimiento
       //'perfil': this.perfil,
       
