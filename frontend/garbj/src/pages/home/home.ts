@@ -8,22 +8,20 @@ import { RestProvider } from '../../providers/rest/rest';
 })
 export class HomePage {
 
-  usuario: String;
+  nombre: String;
 
   constructor(public navCtrl: NavController, public restProvider: RestProvider) {
 
   }
 
   ionViewDidLoad() {
-    console.log("Entramos");
     this.consultarUsuarioActual();
   }
 
   consultarUsuarioActual() {
     this.restProvider.getUsuarioActual()
       .then((data: any) => {
-        this.usuario = data.id;
-        console.log(this.usuario);
+        this.nombre = data.nombre+" "+data.apellido;
       });
   }
 
