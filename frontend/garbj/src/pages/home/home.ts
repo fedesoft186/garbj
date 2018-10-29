@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
+import { LogroPage } from '../logro/logro';
 
 @Component({
   selector: 'page-home',
@@ -23,6 +24,10 @@ export class HomePage {
       .then((data: any) => {
         this.nombre = data.nombre+" "+data.apellido;
       });
+  }
+
+  mostrarLogros() {
+    this.navCtrl.push(LogroPage);
   }
 
 }

@@ -11,11 +11,18 @@ class Usuario(models.Model):
     correo = models.CharField(max_length=200)
     fecha_nacimiento = models.DateField(max_length=200) 
     def __str__(self):
-        return str(self.nombre)   
+        return str(self.nombre)  
 
 class Premio(models.Model):
     descripcion = models.TextField()
     nombre = models.CharField(max_length=200)
     valor = models.IntegerField()
     def __str__(self):
-        return str(self.nombre)   
+        return str(self.nombre) 
+
+class Logro(models.Model):
+    nombre = models.CharField(max_length=200)
+    descripcion = models.TextField() # Área de texto
+    valor_en_puntos = models.IntegerField()
+    estado = models.CharField(max_length=50)
+    fecha = models.DateField()

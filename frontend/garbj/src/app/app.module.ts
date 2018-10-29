@@ -11,6 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';  //Se inclu
 import { RestProvider } from '../providers/rest/rest';
 import { PremioPage } from '../pages/premio/premio';    //Añadido por Login tutorial IONIC
 import { RegistroPage } from '../pages/registro/registro';  //Añadido por Registro tutorial Registro Usuarios
+import { LogroPage } from '../pages/logro/logro';
 
 
 @NgModule({
@@ -18,8 +19,9 @@ import { RegistroPage } from '../pages/registro/registro';  //Añadido por Regis
     MyApp,
     HomePage,
     LoginPage,
-    PremioPage,  //Resgistrar las páginas IONIC
-    RegistroPage  //Resgistrar la página "Registro"
+    PremioPage,  //Registrar las páginas IONIC
+    RegistroPage,  //Registrar la página "Registro"
+    LogroPage
   ],
 
   imports: [
@@ -34,7 +36,8 @@ import { RegistroPage } from '../pages/registro/registro';  //Añadido por Regis
     HomePage,
     LoginPage,
     PremioPage,    //Resgistrar las páginas IONIC
-    RegistroPage
+    RegistroPage,
+    LogroPage
   ],
   providers: [
     StatusBar,
