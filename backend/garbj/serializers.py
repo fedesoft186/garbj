@@ -28,3 +28,8 @@ class PremioSerializer(serializers.ModelSerializer):
         model = Premio
         fields = ('nombre','descripcion','valor')
           
+class PuntoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Punto
+        fields = ('puntos','fecha')
+          

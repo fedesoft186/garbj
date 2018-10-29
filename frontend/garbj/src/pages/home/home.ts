@@ -15,14 +15,5 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    this.consultarUsuarioActual();
   }
-
-  consultarUsuarioActual() {
-    this.restProvider.getUsuarioActual()
-      .then((data: any) => {
-        this.nombre = data.nombre+" "+data.apellido;
-      });
-  }
-
 }

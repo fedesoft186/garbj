@@ -18,4 +18,4 @@ class Premio(models.Model):
     nombre = models.CharField(max_length=200)
     valor = models.IntegerField()
     def __str__(self):
-        return str(self.nombre)   
+        return str(self.nombre)
