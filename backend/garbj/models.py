@@ -18,9 +18,6 @@ class Premio(models.Model):
     nombre = models.CharField(max_length=200)
     valor = models.IntegerField()
     def __str__(self):
-<<<<<<< HEAD
-        return str(self.nombre)
-=======
         return str(self.nombre) 
 
 class Logro(models.Model):
@@ -29,4 +26,9 @@ class Logro(models.Model):
     valor_en_puntos = models.IntegerField()
     estado = models.CharField(max_length=50)
     fecha = models.DateField()
->>>>>>> ac801d4dddd68f2c3318a35a3e02b0d321a5a3b5
+
+class Punto(models.Model):
+    puntos = models.TextField()
+    fecha_obtencion = models.DateField(max_length=200) 
+    def __str__(self):
+        return str(self.puntos) 

@@ -1,6 +1,6 @@
 from rest_framework.decorators import permission_classes
-from garbj.models import Usuario, Premio, Logro
-from garbj.serializers import UsuarioSerializer, PremioSerializer, LogroSerializer
+from garbj.models import Usuario, Premio, Logro, Punto
+from garbj.serializers import UsuarioSerializer, PremioSerializer, LogroSerializer, PuntoSerializer
 from garbj.permissions import IsPostOrIsAuthenticated
 from rest_framework import generics
 from django_filters.rest_framework import DjangoFilterBackend
@@ -31,3 +31,11 @@ class LogroList(generics.ListCreateAPIView):
 class LogroDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = LogroSerializer
     queryset = Logro.objects.all()
+
+class PuntoList(generics.ListCreateAPIView):
+    serializer_class = PuntoSerializer
+    queryset = Punto.objects.all()
+
+class PuntoDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = PuntoSerializer
+    queryset = Punto.objects.all()
