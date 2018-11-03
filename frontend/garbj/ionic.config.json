@@ -1,0 +1,7 @@
+{
+  "name": "garbj",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
